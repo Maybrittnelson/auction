@@ -12,7 +12,7 @@ export class StockService {
   }
 
   getStock(id: number): Observable<Stock> {
-    return this.http.get('/api/stock' + id).map(res => res.json());
+    return this.http.get('/api/stock/' + id).map(res => res.json());
   }
 
 }
