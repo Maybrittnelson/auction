@@ -8,13 +8,18 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges
 
 export class StarsComponent implements OnInit, OnChanges {
 
-  @Input()//输入属性,注意：导入INPUT,()
-  rating: number = 0;
   @Input()
-  readonly: boolean = true;
+  private rating = 0;
+
   @Output()
-  ratingChage: EventEmitter<number> = new EventEmitter();
-  stars: boolean[];
+  private ratingChage: EventEmitter<number> = new EventEmitter();
+
+
+  private stars: boolean[];
+
+  @Input()
+  private readonly: boolean;
+
 
   constructor() { }
 
@@ -26,10 +31,17 @@ export class StarsComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+/*    if (changes['rating']) {
+      console.log('1');
+    }
+    this.stars = [];
+    for (let i = 1; i <= 5; i++) {
+      this.stars.push(i > this.rating);
+    }*/
   }
 
   clickStart(index: number) {
-    if (!this.readonly) {
+    if (this.readonly) {
       this.rating = index + 1;
       this.stars = [];
       for (let i = 1; i <= 5; i++) {
