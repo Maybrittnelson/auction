@@ -12,7 +12,7 @@ export class StarsComponent implements OnInit, OnChanges {
   public rating: number;
 
   @Output()
-  private ratingChage: EventEmitter<number> = new EventEmitter();
+  private ratingChange: EventEmitter<number> = new EventEmitter();
 
 
   private stars: boolean[];
@@ -24,30 +24,20 @@ export class StarsComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
-    this.stars = [];
-    for (let i = 1; i <= 5; i++) {
-      this.stars.push(i > this.rating);
-    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-/*    if (changes['rating']) {
-      console.log('1');
-    }
+
     this.stars = [];
     for (let i = 1; i <= 5; i++) {
       this.stars.push(i > this.rating);
-    }*/
+    }
   }
 
   clickStart(index: number) {
     if (this.readonly) {
       this.rating = index + 1;
-      this.stars = [];
-      for (let i = 1; i <= 5; i++) {
-        this.stars.push(i > this.rating);
-      }
-      this.ratingChage.emit(this.rating);
+      this.ratingChange.emit(this.rating);
     }
   }
 

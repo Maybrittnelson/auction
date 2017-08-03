@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SocketService} from "./socket.service";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,8 @@ import {SocketService} from "./socket.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  title = environment.appTitle;
 
   messageCount = 0;
 

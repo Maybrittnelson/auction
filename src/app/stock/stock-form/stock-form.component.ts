@@ -80,7 +80,6 @@ export class StockFormComponent implements OnInit {
     }
     this.formMoudle.value.categories = chinsesCategories;
     this.formMoudle.value.rating = this.stock.rating;
-    console.log(this.formMoudle.value) ;
-    //this.router.navigateByUrl('/stock');
+    this.router.navigateByUrl('/stock');
   }
 }
