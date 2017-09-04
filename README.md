@@ -30,4 +30,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## 关于处理angular跨域请求
 
 使用angular-cli中的[Proxy To Backend](https://www.npmjs.com/package/angular-cli#proxy-to-backend)
+不理解点[这里](http://geshaofeng.com/2017/09/04/angular-cli/)
 
