@@ -27,5 +27,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## 关于处理angular跨域请求
 
+使用angular-cli中的[Proxy To Backend](https://www.npmjs.com/package/angular-cli#proxy-to-backend)
 
